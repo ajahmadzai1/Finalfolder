@@ -17,8 +17,8 @@ db2
 
 [linux:vars]
 ansible_ssh_user=justincase
-ansible_ssh_pass=password01
-ansible_become_pass=password01
+ansible_ssh_pass=Password01
+ansible_become_pass=Password01
 
 
 
