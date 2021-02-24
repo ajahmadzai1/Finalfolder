@@ -2,10 +2,10 @@
 
 - hosts: linux
   tasks:
-  - name: Create user (AJ/cisco1)
+  - name: create user (AJ/cisco1)
     user:
       name: "AJ Ahmadzai"
-      Password: "{{ 'cisco1' | password_hash('sha512') }}"
+      password: "{{ 'cisco1' | password_hash('sha512') }}"
     become: yes
 
 - hosts: db
