@@ -1,0 +1,12 @@
+---
+- hosts: web
+  task:
+    - name: copy web data from computer to web server
+      become: yes
+      copy: 
+        src: /home/justincase/ITfoler/
+        dest: /var/www/html/
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
+        

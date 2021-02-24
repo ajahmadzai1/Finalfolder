@@ -21,6 +21,7 @@ ansible_ssh_pass=password01
 ansible_become_pass=password01
 
 
+
 [web]
 web1
 web2
