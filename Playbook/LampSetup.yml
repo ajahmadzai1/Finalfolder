@@ -30,10 +30,10 @@
 
 - hosts: web
   tasks:
--   name: install the apache
+  - name: install the apache
     become: yes
     apt: name=apache2 state=present
--   name: set apache to run
+  - name: set apache to run
     become: yes
     service:
       name: apache2
