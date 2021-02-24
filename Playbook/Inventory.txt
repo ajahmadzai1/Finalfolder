@@ -10,8 +10,8 @@ CSR2 ansible_host=192.168.0.12
 
 
 [linux]
-Web1
-Web2
+web1
+web2
 db1
 db2
 
