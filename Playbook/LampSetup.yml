@@ -32,7 +32,9 @@
   tasks:
   - name: install the apache
     become: yes
-    apt: name=apache2 state=present
+    apt:
+      name: apache2 
+      state: present
   - name: set apache to run
     become: yes
     service:
