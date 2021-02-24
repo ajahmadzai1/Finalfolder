@@ -4,7 +4,7 @@
   tasks:
   - name: create user (AJ/cisco1)
     user:
-      name: "AJ Ahmadzai"
+      name: "mark"
       password: "{{ 'cisco1' | password_hash('sha512') }}"
     become: yes
 
