@@ -1,0 +1,50 @@
+---
+
+- hosts: linux
+  tasks:
+  - name: create user (AJ/cisco1)
+    user:
+      name: "mark"
+      password: "{{ 'cisco1' | password_hash('sha512') }}"
+    become: yes
+    tags: setup
+
+- hosts: db
+  tasks:
+  - name: Install mariadb
+    become: yes
+    tags: setup
+    apt:
+      name: mariadb-server
+      state: present
+
+  - name: Enable MariaDB server
+    become: yes
+    tags: setup
+    service:
+      name: mariadb
+      enabled: yes
+
+  - name: start Mariadb
+    become: yes
+    tags: setup
+    service:
+      name: mariadb
+      state: started
+
+- hosts: web
+  tasks:
+  - name: install the apache
+    become: yes
+    tags: setup
+    apt:
+      name: apache2 
+      state: present
+  - name: set apache to run
+    become: yes
+    tags: setup
+    service:
+      name: apache2
+      state: started
+      enabled: yes
+     
