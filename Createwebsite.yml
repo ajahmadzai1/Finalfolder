@@ -1,6 +1,6 @@
 ---
 - hosts: web
-  task:
+  tasks:
   - name: Configuration of website
     become: yes
     copy:
