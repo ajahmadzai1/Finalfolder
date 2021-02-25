@@ -1,0 +1,50 @@
+---
+
+- hosts: linux
+  tasks:
+  - name: create user (AJ/cisco1)
+    user:
+      name: "mark"
+      state: absent
+    become: yes
+    tags: remove
+
+- hosts: db
+  tasks:
+  - name: Install mariadb
+    become: yes
+    tags: remove
+    apt:
+      name: mariadb-server
+      state: absent
+
+  - name: Enable MariaDB server
+    become: yes
+    tags: remove
+    service:
+      name: mariadb
+      enabled: yes
+
+  - name: start Mariadb
+    become: yes
+    tags: remove
+    service:
+      name: mariadb
+      state: absent
+
+- hosts: web
+  tasks:
+  - name: install the apache
+    become: yes
+    tags: remove
+    apt:
+      name: apache2 
+      state: absent
+  - name: set apache to run
+    become: yes
+    tags: remove
+    service:
+      name: apache2
+      state: absent
+      enabled: yes
+     
