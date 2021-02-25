@@ -18,19 +18,6 @@
       name: mariadb-server
       state: absent
 
-  - name: Enable MariaDB server
-    become: yes
-    tags: remove
-    service:
-      name: mariadb
-      enabled: yes
-
-  - name: start Mariadb
-    become: yes
-    tags: remove
-    service:
-      name: mariadb
-      state: absent
 
 - hosts: web
   tasks:
@@ -40,11 +27,5 @@
     apt:
       name: apache2 
       state: absent
-  - name: set apache to run
-    become: yes
-    tags: remove
-    service:
-      name: apache2
-      state: absent
-      enabled: yes
+
      
