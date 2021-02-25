@@ -1,0 +1,11 @@
+---
+- hosts: web
+  task:
+  - name: Configuration of website
+    become: yes
+    copy:
+      src: /home/justincase/Finalfolder/website/
+      dest: /var/www/html/
+      owner: root
+      group: root
+      mode: u=rw,g=r,o=r
