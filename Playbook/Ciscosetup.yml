@@ -1,0 +1,14 @@
+---
+- hosts: router CSR1
+  gather_facts: fals
+  connection: local
+  tasks:
+  - name: show run 
+    iso_command:
+      commands:
+      - sh run 
+    register: shrun
+  - name: report informaiton 
+    debug:
+      var: shrun 
+  
