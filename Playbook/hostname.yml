@@ -1,0 +1,12 @@
+---
+ - hosts: router CSR1
+  gather_facts: false
+  connection: local
+  tasks:
+  - name: show run 
+    ios_command:
+      commands:
+      - en
+      - conf t
+      - hostname ITrouter
+      - do wr
