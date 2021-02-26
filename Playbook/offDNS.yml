@@ -1,0 +1,12 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  tasks:
+  - name: show run 
+    ios_command:
+      commands:
+      - en
+      - conf t
+      - no ip domain-lookup
+      - do wr
