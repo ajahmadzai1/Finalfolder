@@ -1,6 +1,6 @@
 ---
 - hosts: router CSR1
-  gather_facts: fals
+  gather_facts: false
   connection: local
   tasks:
   - name: show run 
