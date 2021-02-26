@@ -4,7 +4,7 @@
   connection: local
   tasks:
   - name: show run 
-    iso_command:
+    ios_command:
       commands:
       - sh run 
     register: shrun
