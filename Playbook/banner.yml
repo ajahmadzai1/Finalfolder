@@ -8,5 +8,11 @@
       commands:
       - en
       - conf t
-      - banner motd "Welcome to aj router"
+      - banner motd ~
+      ############################################
+
+           welcome to class
+      ############################################ 
+      ~
+
       - do wr man
