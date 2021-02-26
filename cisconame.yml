@@ -1,0 +1,9 @@
+---
+- host: router config
+  gather_facts: false
+  connection: local
+  tasks:
+  - name: update hostname
+    ios_config:
+      lines: hostname HRrouter
+      
