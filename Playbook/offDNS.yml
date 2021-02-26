@@ -10,3 +10,11 @@
       - conf t
       - no ip domain-lookup
       - do wr
+
+  - name: show run 
+    ios_command:
+      commands:
+      - en
+      - conf t
+      - banner motd "UNAUTHORIZED ACCESS PROHIBITED IT’S ONLY FOR IT385 STUDENT !"
+      - do wr
