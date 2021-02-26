@@ -8,6 +8,5 @@
       commands:
       - en
       - conf t
-      - hostname "CISCOROUTER"
+      - hostname "IT385student"
       - do wr
-      
