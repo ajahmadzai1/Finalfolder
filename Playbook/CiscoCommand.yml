@@ -1,0 +1,50 @@
+---
+- hosts: router CSR1
+  gather_facts: false
+  connection: local
+  tasks:
+  - name: show run 
+    ios_command:
+      commands:
+      - en
+      - conf t
+      - hostname "IT385student"
+
+  tasks:
+  - name: assign password  
+    ios_command:
+      commands:
+      - en
+      - conf t
+      - enable password cisco
+      - security passwords min-length 10
+      - service password-encryption
+      - line vty 0 15
+      - exec-timeout 20 30
+      - password cisco
+      - login 
+      - line vty 0 1
+
+
+
+ tasks:
+  - name: assign password  
+    ios_command:
+      commands:
+      - enable
+      - configure terminal 
+      - interface gigabitEthernet 0/0/0
+      - ip add 192.168.0.1 255.255.255.0 
+      - no shutdown
+      - conf terminal
+      - router ospf 1
+      - net 192.168.1.0 0.0.0.255 area 0
+      - net 192.168.1.0 0.0.0.255 area 0 
+      - do wr 
+      
+     
+
+
+
+
+
