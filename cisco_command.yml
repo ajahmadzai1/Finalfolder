@@ -1,0 +1,17 @@
+---
+- hosts: router CSR1
+  gather_facts: false
+  connection: local
+  tasks:
+  - name: show run 
+    ios_command:
+      commands:
+      - en
+      - conf t
+      - int g2
+      - ip addr 10.42.42.42 255.255.0.0
+      - desc this is very easy configuraiton
+      - no shut
+      - do wr mem
+
+     
