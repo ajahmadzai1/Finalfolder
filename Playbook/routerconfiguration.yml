@@ -51,8 +51,7 @@
       - do wr 
 
 ######################################################################################
-
-  - name: assign password  
+  - name: No ip domain lookup  
     ios_command:
       commands:
       - en
