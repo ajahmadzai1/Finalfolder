@@ -14,8 +14,8 @@
   - name: Deploying Banner Massage
     ios_command:
       commands:
-      - en
-      - conf t
+      - enable
+      - configure terminal
       - banner motd "UNAUTHORIZED ACCESS PROHIBITED IT’S ONLY FOR IT385 STUDENT !"
       - do wr
 ########################################################################################
@@ -23,8 +23,8 @@
   - name: Deploying hostname 
     ios_command:
       commands:
-      - en
-      - conf t
+      - enable
+      - configure terminal
       - hostname IT385Router
       - do wr 
 #######################################################################################
@@ -32,7 +32,18 @@
   - name: Deploying Ip address to interface 
     ios_command:
       commands:
-      - en
-      - conf t
+      - enable
+      - configure terminal
       - hostname IT385Router
       - do wr 
+
+#######################################################################################
+- name: Deploying Ip address to interface 
+    ios_command:
+      commands:
+      - enable
+      - configure terminal
+      - interface gigabitEthernet3
+      - ip address 192.168.0.1 255.255.255.0
+      - no shutdown
+      
