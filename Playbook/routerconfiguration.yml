@@ -10,7 +10,7 @@
       - conf t
       - no ip domain-lookup
       - do wr
-
+########################################################################################
   - name: Deploying Banner Massage
     ios_command:
       commands:
@@ -18,7 +18,7 @@
       - conf t
       - banner motd "UNAUTHORIZED ACCESS PROHIBITED IT’S ONLY FOR IT385 STUDENT !"
       - do wr
-
+########################################################################################
 
   - name: Deploying hostname 
     ios_command:
@@ -27,7 +27,7 @@
       - conf t
       - hostname IT385Router
       - do wr 
-
+#######################################################################################
 
   - name: Deploying Ip address to interface 
     ios_command:
