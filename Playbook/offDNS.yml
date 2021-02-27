@@ -3,7 +3,7 @@
   gather_facts: false
   connection: local
   tasks:
-  - name: show run 
+  - name:  
     ios_command:
       commands:
       - en
