@@ -1,9 +1,9 @@
 ---
-- hosts: router
+- hosts: CSR2
   gather_facts: false
   connection: local
   tasks:
-  - name:  
+  - name: No ip domain lookup  
     ios_command:
       commands:
       - en
@@ -11,10 +11,19 @@
       - no ip domain-lookup
       - do wr
 
-  - name: show run 
+  - name: Assing Banner 
     ios_command:
       commands:
       - en
       - conf t
       - banner motd "UNAUTHORIZED ACCESS PROHIBITED IT’S ONLY FOR IT385 STUDENT !"
       - do wr
+
+
+  - name: Assiging hostname 
+    ios_command:
+      commands:
+      - en
+      - conf t
+      - hostname IT385Router
+      - do wr 
