@@ -34,6 +34,9 @@
       commands:
       - enable
       - configure terminal
-      - hostname IT385Router
-      - do wr 
+      - interface gigabitEthernet3
+      - ip add 192.168.0.100 255.255.255.0
+      - no sh
+      
+#####################################################################################
 
