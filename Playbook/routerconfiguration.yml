@@ -2,7 +2,7 @@
 - hosts: CSR2
   gather_facts: false
   connection: local
-  tasks:
+  tasks: Deploying NSP lookup 
   - name: No ip domain lookup  
     ios_command:
       commands:
@@ -11,7 +11,7 @@
       - no ip domain-lookup
       - do wr
 
-  - name: Assing Banner 
+  - name: Deploying Banner Massage
     ios_command:
       commands:
       - en
@@ -20,7 +20,16 @@
       - do wr
 
 
-  - name: Assiging hostname 
+  - name: Deploying hostname 
+    ios_command:
+      commands:
+      - en
+      - conf t
+      - hostname IT385Router
+      - do wr 
+
+
+  - name: Deploying Ip address to interface 
     ios_command:
       commands:
       - en
