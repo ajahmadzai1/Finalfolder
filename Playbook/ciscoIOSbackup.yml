@@ -5,10 +5,10 @@
   tasks:
   - name: show running config on router 
     ios_command:
-      - show run 
+      - show  running-config 
     rigister: config
 
   - name: save outbut backup to the back up folder
     copy:
-      content: "{{config.stdout[0]}}"
-      dest: "./backup/{{ inventory_hostname }}-config.txt"
+      content: "{{ config.stdout[0] }}"
+      dest: "./backup/{{inventory_hostname}}-config.txt"
