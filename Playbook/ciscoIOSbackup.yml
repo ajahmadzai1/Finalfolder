@@ -11,4 +11,4 @@
   - name: save outbut backup to the back up folder
     copy:
       content: "{{ config.stdout[0] }}"
-      dest: "./backup/{{inventory_hostname}}-config.txt"
+      dest: "~/backup/{{inventory_hostname}}-config.txt"
