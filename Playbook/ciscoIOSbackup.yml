@@ -5,6 +5,7 @@
   tasks:
   - name: show running config on router 
     ios_command:
+      commands:
       - show running-config 
     register: config
 
