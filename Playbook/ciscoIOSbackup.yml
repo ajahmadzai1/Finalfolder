@@ -1,5 +1,5 @@
 ---
-- hosts: CSR1
+- hosts: router
   gather_facts: false
   connection: local
   tasks:
