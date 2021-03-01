@@ -1,0 +1,15 @@
+---
+  - name: Backup the cisco routers IOS
+  host: localhost
+  gather_facts: false
+
+  task:
+  - name: show running config on router 
+    ios_command:
+      - show run 
+    rigister: config
+
+  - name: save outbut backup to the back up folder
+    copy:
+      content:"{{config.stdout[0]}}"
+      dest: "./backup/{{ inventory_hostname }}-config.txt"
