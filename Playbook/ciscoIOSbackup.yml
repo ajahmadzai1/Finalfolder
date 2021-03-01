@@ -1,8 +1,5 @@
 ---
-  - name: Backup the cisco routers IOS
-  host: localhost
-  gather_facts: false
-
+- host: CSR1
   task:
   - name: show running config on router 
     ios_command:
