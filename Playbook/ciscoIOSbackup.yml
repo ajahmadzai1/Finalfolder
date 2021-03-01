@@ -1,6 +1,8 @@
 ---
-- host: CSR1
-  task:
+- hosts: CSR1
+  gather_facts: false
+  connection: local
+  tasks:
   - name: show running config on router 
     ios_command:
       - show run 
