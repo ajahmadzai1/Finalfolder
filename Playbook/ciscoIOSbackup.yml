@@ -8,7 +8,7 @@
       - show running-config 
     register: config
 
-  - name: save outbut backup to the back up folder
-    copy:
-      content: "{{ config.stdout[0] }}"
-      dest: "~/backup/{{inventory_hostname}}-config.txt"
+  #- name: save outbut backup to the back up folder
+  #  copy:
+  #    content: "{{ config.stdout[0] }}"
+  #    dest: "./backup/{{inventory_hostname}}-config.txt"
