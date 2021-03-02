@@ -1,0 +1,6 @@
+---
+- hosts: web1
+  tasks:
+  - name: reboot the web1
+    reboot:
+      reboot_timeout: 1800

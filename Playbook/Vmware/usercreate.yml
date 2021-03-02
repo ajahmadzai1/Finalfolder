@@ -1,0 +1,19 @@
+---
+- hosts: web
+  become: true
+  tasks:
+    - name: read user from CSV file and retune a direcotory 
+      read_csv:
+        path: users.csv
+        key:  name
+      register: users
+      delegate_to: localhost
+    - name: Debug users
+      debug:
+          msg: "{{ users.dict.values() | list }}"
+
+  # Read as Csv
+  # loop through CSV
+  # Identify individual components (name , password)
+  # Create user
+
