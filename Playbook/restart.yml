@@ -1,5 +1,5 @@
 ---
-- hosts: web1
+- hosts: web1, web2
   tasks:
   - name: reboot the web1
     become: yes
