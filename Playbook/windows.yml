@@ -1,0 +1,35 @@
+---
+- hosts: windows
+  tasks:  
+  - name: Download the 7-Zip package
+  win_get_url:
+    url: https://www.7-zip.org/a/7z1701-x64.msi
+    dest: C:\temp\7z.msi
+
+  - name: Ensure 7-Zip is installed via win_package
+    win_package:
+      path: C:\temp\7z.msi
+      state: present
+
+##################################################################
+
+- name: Ensure 7-Zip is installed via Chocolatey
+    win_chocolatey:
+      name: 7zip
+      state: present
+
+  - name: Ensure 7-Zip is not installed via Chocolatey
+    win_chocolatey:
+      name: 7zip
+      state: absent
+
+#################################################################
+- name: Create local user
+  win_user:
+    name: '{{ egoad.name }}'
+    password: '{{ RubberDuck!.password }}'
+    groups: LocalGroup
+    update_password: no
+    password_never_expires: 
+#################################################################
+
