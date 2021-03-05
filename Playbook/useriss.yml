@@ -1,0 +1,27 @@
+---
+- hosts: windows
+  tasks:
+- name: Install IIS on web server
+  ansible.windows.win_feature:
+    name: Web-Server
+    state: present
+
+- name: Install IIS (Web-Server and Web-Common-Http)
+  ansible.windows.win_feature:
+    name:
+    - Web-Server
+    - Web-Common-Http
+    state: present
+#################################################################
+
+- name: Install all critical and security updates
+  win_updates:
+    category_names:
+    - CriticalUpdates
+    - SecurityUpdates
+    state: installed
+  register: update_result
+
+- name: Reboot host if required
+  win_reboot:
+  when: update_result.reboot_required

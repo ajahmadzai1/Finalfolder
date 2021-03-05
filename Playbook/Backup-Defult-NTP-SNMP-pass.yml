@@ -1,0 +1,15 @@
+---
+- hosts: CSR1,CSR2
+  gather_facts: false
+  connection: local
+  tasks:
+  - name: show running config on router 
+    ios_command:
+      commands:
+      - show running-config 
+    register: config
+
+  - name: save outbut backup to the back up folder
+    copy:
+      content: "{{ config.stdout[0] }}"
+      dest: "~/Cisco-Backup/{{inventory_hostname}}-config.txt"

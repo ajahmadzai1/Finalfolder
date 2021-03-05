@@ -5,3 +5,5 @@
     become: yes
     reboot:
       reboot_timeout: 1800
+    when: ansible_uptime_seconds > 600
+    
