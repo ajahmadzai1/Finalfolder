@@ -37,7 +37,7 @@
       - password GRCCon
       - login 
 ##########################################################################################
-    tasks:
+  tasks:
   - name: Configure NTP server 
     ios_command:
       commands:
@@ -47,7 +47,7 @@
       - 
 
 #################################################################################################
-    tasks:
+  tasks:
   - name: configurtion of NTP server 
     ios_command:
       commands:
@@ -57,7 +57,7 @@
       - do wr
 
 ################################################################################################
-    tasks:
+  tasks:
   - name: configurtion SNMP
     ios_command:
       commands:
