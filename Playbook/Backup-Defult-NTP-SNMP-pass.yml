@@ -16,7 +16,7 @@
 
 #############################################################################################
 
-  tasks:
+  
   - name: IP route Configuration 
     ios_command:
       commands:
@@ -27,7 +27,7 @@
 
 ##############################################################################################
 
-  tasks:
+  
   - name: Assinging console password  
     ios_command:
       commands:
@@ -37,7 +37,7 @@
       - password GRCCon
       - login 
 ##########################################################################################
-  tasks:
+  
   - name: Configure NTP server 
     ios_command:
       commands:
@@ -46,7 +46,7 @@
       - ntp server 192.168.0.250
 
 #################################################################################################
-  tasks:
+  
   - name: configurtion of NTP server 
     ios_command:
       commands:
@@ -56,7 +56,7 @@
       - do wr
 
 ################################################################################################
-  tasks:
+  
   - name: configurtion SNMP
     ios_command:
       commands:
