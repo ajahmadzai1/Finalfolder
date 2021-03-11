@@ -13,3 +13,55 @@
     copy:
       content: "{{ config.stdout[0] }}"
       dest: "~/Cisco-Backup/{{inventory_hostname}}-config.txt"
+
+#############################################################################################
+
+  tasks:
+  - name: IP route Configuration 
+    ios_command:
+      commands:
+      - enable
+      - configure terminal
+      - ip route 0.0.0.0 0.0.0.0 gigabitEthernet 0/0/0
+      - no shutdown 
+
+##############################################################################################
+
+  tasks:
+  - name: Assinging console password  
+    ios_command:
+      commands:
+      - enable
+      - configure terminal
+      - line console 0
+      - password GRCCon
+      - login 
+##########################################################################################
+    tasks:
+  - name: Configure NTP server 
+    ios_command:
+      commands:
+      - enable
+      - configure terminal
+      - ntp server 192.168.0.250
+      - 
+
+#################################################################################################
+    tasks:
+  - name: configurtion of NTP server 
+    ios_command:
+      commands:
+      - enable
+      - configure terminal
+      - ntp server 192.168.0.250
+      - do wr
+
+################################################################################################
+    tasks:
+  - name: configurtion SNMP
+    ios_command:
+      commands:
+      - enable
+      - configure terminal
+      - snmp-server community GRCRocks rw
+      - snmp-server community GRCRocks ro
