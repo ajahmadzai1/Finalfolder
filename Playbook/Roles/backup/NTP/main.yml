@@ -1,0 +1,10 @@
+---
+
+# configure routers with SNTP sever
+
+- name: Configure NTP server 
+  ios_command:
+    commands:
+    - enable
+    - configure terminal
+    - ntp server 192.168.0.250

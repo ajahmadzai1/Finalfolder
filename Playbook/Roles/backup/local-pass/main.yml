@@ -1,0 +1,11 @@
+--- 
+# Configure router with console password
+ 
+- name: Assinging console password  
+  ios_command:
+    commands:
+    - enable
+    - configure terminal
+    - line console 0
+    - password GRCCon
+    - login 

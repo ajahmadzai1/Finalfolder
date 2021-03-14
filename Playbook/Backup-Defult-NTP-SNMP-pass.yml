@@ -47,16 +47,6 @@
 
 #################################################################################################
   
-  - name: configurtion of NTP server 
-    ios_command:
-      commands:
-      - enable
-      - configure terminal
-      - ntp server 192.168.0.250
-      - do wr
-
-################################################################################################
-  
   - name: configurtion SNMP
     ios_command:
       commands:

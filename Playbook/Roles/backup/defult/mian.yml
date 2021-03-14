@@ -1,0 +1,11 @@
+---
+
+# configure routers with defult ip address  
+
+- name: IP route Configuration 
+  ios_command:
+    commands:
+    - enable
+    - configure terminal
+    - ip route 0.0.0.0 0.0.0.0 gigabitEthernet 0/0/0
+    - no shutdown 
