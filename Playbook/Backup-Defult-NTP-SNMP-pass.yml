@@ -22,7 +22,7 @@
       commands:
       - enable
       - configure terminal
-      - ip route 0.0.0.0 0.0.0.0 gigabitEthernet 0/0/0
+      - ip route 0.0.0.0 0.0.0.0 gigabitEthernet3
       - no shutdown 
 
 ##############################################################################################
