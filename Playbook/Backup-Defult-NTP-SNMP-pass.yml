@@ -54,3 +54,14 @@
       - configure terminal
       - snmp-server community GRCRocks rw
       - snmp-server community GRCRocks ro
+
+      
+#################################################################################################
+  
+  - name: configurtion SNMP
+    ios_command:
+      commands:
+      - enable
+      - configure terminal
+      - snmp-server community GRCRocks rw
+      - snmp-server community GRCRocks ro
